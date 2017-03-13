@@ -11,4 +11,15 @@
   var formHandler = new FormHandler(FORM_SELECTOR);
   formHandler.addSubmitHandler(myTruck.createOrder.bind(myTruck));
   console.log(formHandler);
+
 })(window);
+
+var slider = document.querySelector('#strengthLevel');
+var valueIndicator = document.querySelector('#rating');
+if (slider) {
+  console.log('Setting slider watcher.');
+  slider.addEventListener('onfocusout', function () {
+    valueIndicator.innerHTML = slider.value;
+    console.log('Changed span text to: ' + slider.value);
+  });
+}
