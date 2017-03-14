@@ -19,7 +19,7 @@ var $slider = $('#strengthLevel');
 var valueIndicator = document.querySelector('#rating');
 
 if ($slider) {
-  $slider.on('change', function () {
+  $slider.on('input', function () {
     valueIndicator.innerHTML = $slider[0].value;
     if ($slider[0].value >= 85) {
       valueIndicator.setAttribute('class', 'red');

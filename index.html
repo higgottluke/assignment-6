@@ -13,7 +13,7 @@
     color: green;
   }
   .yellow {
-    color: yellow;
+    color: #ffe500;
   }
   </style>
 </head>
@@ -22,6 +22,34 @@
   <header>
     <h1>CoffeeRun</h1>
   </header>
+  <!-- modal -->
+  <div class="modal fade" id="achievement">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Congratulations</h1>
+        </div>
+        <div class="modal-body">
+          <p class="lead">You ordered some crazy coffee.</p>
+          <p>Want to add some magic power-up to your order?</p>
+        </div>
+        <form data-achiev-form="form">
+          <div class="form-group">
+            <label for="powerUp">Add a bonus power-up: </label>
+            <select id="powerUp" class="form-control" name="powerUp">
+              <option value="caramel">Time Travel</option>
+              <option value="almond">Mind Reading</option>
+              <option value="mocha">Bug-Free Code</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Awesome!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- end modal -->
   <section>
     <div class="panel panel-default">
       <div class="panel-body">
@@ -79,7 +107,10 @@
   </section>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
-      charset="utf-8"></script>
+charset="utf-8"></script>
+<!-- bootstrap javascript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <script src="scripts/formhandler.js" charset="utf-8"></script>
 <script src="scripts/datastore.js" charset="utf-8"></script>
 <script src="scripts/truck.js" charset="utf-8"></script>

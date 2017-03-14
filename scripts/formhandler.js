@@ -15,6 +15,7 @@
       console.log('Setting submit handler for form');
       this.$formElement.on('submit', function (event) {
         event.preventDefault();
+        $('[data-achiev-form]').toggle();
 
         var data = {};
         $(this).serializeArray().forEach(function (item) {
@@ -22,9 +23,20 @@
           console.log(item.name + ' is ' + item.value);
         });
         console.log(data);
+
+        // Gold Challenge
+        if (data['size'] == 'trenta' && data['flavor'] && data['strength'] == 100) {
+          var modal = $('#achievement');
+          modal.modal();
+          if (data['emailAddress']) {
+            $('[data-achiev-form]').toggle();
+          }
+        }
+
         fn(data);
         this.reset();
         this.elements[0].focus();
+
       });
     };
   }
