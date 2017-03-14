@@ -14,12 +14,21 @@
 
 })(window);
 
-var slider = document.querySelector('#strengthLevel');
+// Silver Challenge
+var $slider = $('#strengthLevel');
 var valueIndicator = document.querySelector('#rating');
-if (slider) {
-  console.log('Setting slider watcher.');
-  slider.addEventListener('onfocusout', function () {
-    valueIndicator.innerHTML = slider.value;
-    console.log('Changed span text to: ' + slider.value);
+
+if ($slider) {
+  $slider.on('change', function () {
+    valueIndicator.innerHTML = $slider[0].value;
+    if ($slider[0].value >= 85) {
+      valueIndicator.setAttribute('class', 'red');
+    }
+    else if ($slider[0].value <= 15) {
+      valueIndicator.setAttribute('class', 'green');
+    }
+    else {
+      valueIndicator.removeAttribute('class');
+    }
   });
 }
