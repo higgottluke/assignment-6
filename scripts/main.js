@@ -28,7 +28,7 @@ if ($slider) {
       valueIndicator.setAttribute('class', 'green');
     }
     else {
-      valueIndicator.removeAttribute('class');
+      valueIndicator.setAttribute('class', 'yellow');
     }
   });
 }
